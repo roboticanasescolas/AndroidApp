@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufc.quixada.roboticaescolas.posiServos">
+
+    <TextView
+        android:id="@+id/garraT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginTop="121dp"
+        android:text="Garra (Motor 1): "
+        app:layout_constraintBottom_toTopOf="@+id/alturaT"
+        app:layout_constraintEnd_toEndOf="@+id/alturaT"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="@+id/alturaT"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/alturaT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        android:layout_marginTop="17dp"
+        android:text="Altura (Motor 2): "
+        app:layout_constraintBottom_toTopOf="@+id/avancoT"
+        app:layout_constraintEnd_toEndOf="@+id/avancoT"
+        app:layout_constraintStart_toStartOf="@+id/avancoT"
+        app:layout_constraintTop_toBottomOf="@+id/garraT" />
+
+    <TextView
+        android:id="@+id/avancoT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="17dp"
+        android:text="Avanço (Motor 3): "
+        app:layout_constraintBottom_toTopOf="@+id/baseT"
+        app:layout_constraintEnd_toEndOf="@+id/baseT"
+        app:layout_constraintStart_toStartOf="@+id/baseT"
+        app:layout_constraintTop_toBottomOf="@+id/alturaT" />
+
+    <TextView
+        android:id="@+id/baseT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="266dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginLeft="143dp"
+        android:layout_marginRight="142dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="15dp"
+        android:text="Base (Motor 4): "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/avancoT" />
+
+</android.support.constraint.ConstraintLayout>

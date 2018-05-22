@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufc.quixada.roboticaescolas.SelecionarRobo">
+
+    <ImageButton
+        android:id="@+id/bBraco"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginRight="148dp"
+        android:layout_marginStart="148dp"
+        android:background="@drawable/buttonshape"
+        android:src="@mipmap/bbraco"
+        android:text="Button"
+        app:layout_constraintBottom_toTopOf="@+id/bCarro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    // android:src="@mipmap/carro"
+
+    <ImageButton
+        android:id="@+id/bCarro"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/buttonshape"
+        android:text="Button"
+        android:src="@mipmap/bcarro"
+        app:layout_constraintBottom_toTopOf="@+id/bAranha"
+        app:layout_constraintEnd_toEndOf="@+id/bBraco"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bBraco"
+        app:layout_constraintTop_toBottomOf="@+id/bBraco" />
+
+    <ImageButton
+        android:background="@drawable/buttonshape"
+        android:id="@+id/bAranha"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@mipmap/baranha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bCarro"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bCarro"
+        app:layout_constraintTop_toBottomOf="@+id/bCarro" />
+</android.support.constraint.ConstraintLayout>

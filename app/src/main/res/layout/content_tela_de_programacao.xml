@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="br.ufc.quixada.roboticaescolas.TelaDeProgramacao"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp"
+    tools:showIn="@layout/activity_tela_de_programacao">
+
+    <Button
+        android:id="@+id/telaDeProgramacao_abreFecha"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="4dp"
+        android:text="Abre/Fecha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/telaDeProgramacao_girar"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Girar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_abreFecha"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/telaDeProgramacao_avancaRecua"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Avança/Recua"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_girar"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/telaDeProgramacao_sobeDesce"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Sobe/desce"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_avancaRecua"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <EditText
+        android:id="@+id/telaDeProgramacao_ValorEnviado"
+        android:layout_width="133dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:hint="Valor (1 a 100)"
+        android:inputType="number"
+        android:selectAllOnFocus="false"
+        android:singleLine="false"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/telaDeProgramacao_apagar"
+        android:layout_width="168dp"
+        android:layout_height="46dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="25dp"
+        android:text="Apagar"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_salvar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/telaDeProgramacao_testar"
+        android:layout_width="168dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Testar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bLimpar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/bLimpar"
+        app:layout_constraintTop_toBottomOf="@+id/bLimpar"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <TextView
+        android:id="@+id/tDelay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Atraso: 1000"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintEnd_toEndOf="@+id/bDelay"
+        app:layout_constraintStart_toStartOf="@+id/bDelay"
+        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_apagar" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="170dp"
+        android:layout_height="239dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="90dp"
+        android:orientation="horizontal"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_ValorEnviado"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ListView
+            android:id="@+id/telaDeProgramacao_lista_de_comandos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp" />
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/telaDeProgramacao_button_more"
+        android:layout_width="41dp"
+        android:layout_height="35dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintLeft_toRightOf="@+id/telaDeProgramacao_ValorEnviado"
+        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_ValorEnviado"
+        app:srcCompat="@mipmap/button_more" />
+
+    <ImageButton
+        android:id="@+id/telaDeProgramacao_button_less"
+        android:layout_width="41dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="-2dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintRight_toLeftOf="@+id/telaDeProgramacao_ValorEnviado"
+        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_ValorEnviado"
+        app:srcCompat="@mipmap/ic_launcher" />
+
+    <Button
+        android:id="@+id/telaDeProgramacao_salvar"
+        android:layout_width="140dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Salvar"
+        app:layout_constraintBottom_toBottomOf="@+id/telaDeProgramacao_testar"
+        app:layout_constraintEnd_toEndOf="@+id/bDelay"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/bDelay"
+        app:layout_constraintTop_toTopOf="@+id/telaDeProgramacao_testar"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/bLimpar"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="11dp"
+        android:text="Limpar"
+        app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_apagar"
+        app:layout_constraintTop_toBottomOf="@+id/telaDeProgramacao_apagar"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+    <Button
+        android:id="@+id/bDelay"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Mudar atraso"
+        app:layout_constraintBottom_toBottomOf="@+id/bLimpar"
+        app:layout_constraintEnd_toEndOf="@+id/telaDeProgramacao_sobeDesce"
+        app:layout_constraintStart_toStartOf="@+id/telaDeProgramacao_sobeDesce"
+        app:layout_constraintTop_toTopOf="@+id/bLimpar"
+        app:layout_constraintVertical_bias="0.0"
+        android:background="@drawable/buttonshape"
+        android:textColor="#FFFFFF"/>
+
+</android.support.constraint.ConstraintLayout>
