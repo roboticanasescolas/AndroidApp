@@ -16,11 +16,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name="br.ufc.quixada.roboticaescolas.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name="br.ufc.quixada.roboticaescolas.ReceivingData" />
         <activity android:name="br.ufc.quixada.roboticaescolas.Dados" />
@@ -34,7 +29,13 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="br.ufc.quixada.roboticaescolas.posiServos" />
         <activity android:name="br.ufc.quixada.roboticaescolas.TelaConfBraco" />
-        <activity android:name="br.ufc.quixada.roboticaescolas.SelecionarRobo"></activity>
+        <activity android:name="br.ufc.quixada.roboticaescolas.MainSelecionarRobo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

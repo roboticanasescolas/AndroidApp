@@ -68,8 +68,6 @@ public class ConexaoBlue {
         }
     }
 
-
-
     //Garante a conexão com o módulo bluetooth
     public static ConexaoBlue getInstance(BluetoothDevice d, boolean subrescrever) {
         if (conexao == null)

@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.enoque_alves.roboticaescolas.R;
 
-public class SelecionarRobo extends AppCompatActivity {
+public class MainSelecionarRobo extends AppCompatActivity {
     private ImageButton b_braco, b_carro, b_aranha;
 
     @Override
@@ -25,7 +25,7 @@ public class SelecionarRobo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //chamar tela de conf braco
-                Intent it = new Intent(SelecionarRobo.this, TelaConfBraco.class);
+                Intent it = new Intent(MainSelecionarRobo.this, TelaConfBraco.class);
                 startActivity(it);
             }
         });
@@ -34,7 +34,7 @@ public class SelecionarRobo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //chamar tela de conf Carro
-                Toast.makeText(SelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainSelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -42,7 +42,7 @@ public class SelecionarRobo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //chamar tela de conf Aranha
-                Toast.makeText(SelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainSelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
             }
         });
     }

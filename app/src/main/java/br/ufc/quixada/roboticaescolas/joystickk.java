@@ -197,9 +197,11 @@ public class joystickk extends AppCompatActivity {
             public void onClick(View v) {
                 gravando = !gravando;
                 if (gravando){
+                    gravar.setText("PARAR GRAVAÇÃO");
                     Toast.makeText(joystickk.this, "Gravando!!", Toast.LENGTH_SHORT).show();
                 }
                 else {
+                    gravar.setText("GRAVAR");
                     Toast.makeText(joystickk.this, "Fim da gravação!!", Toast.LENGTH_SHORT).show();
                 }
             }

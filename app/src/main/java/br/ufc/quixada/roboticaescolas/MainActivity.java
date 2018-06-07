@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Log.i("asd", "qwe");
+        setContentView(R.layout.activity_lista_dispositivos);
+        //Log.i("asd", "qwe");
 
 
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, textos);
         listaDeDispositivos.setAdapter(adapter);
 
-
-        //listaDeCursos.setClickable(true);
         listaDeDispositivos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -64,14 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 Object o = listaDeDispositivos.getItemAtPosition(position);
                 String str=(String)o;//As you are using Default String Adapter
                 Toast.makeText(getApplicationContext(),str,Toast.LENGTH_SHORT).show();
-                /* TEMP NAO ESQUECER DE TIRAR!! */
-                //Intent i_temp = new Intent(MainActivity.this, joystickk.class);
-                //startActivity(i_temp);
-                /* TEMP NAO ESQUECER DE TIRAR!! */
                 String a[] = str.split("\n");
-//                Intent it = new Intent(MainActivity.this, Dados.class);
-//                it.putExtra("nome", str);
-//                startActivity(it);
                 nomeDispositivo = a[0];
                 Log.i("asd", "Nome = " + nomeDispositivo);
                 try{
