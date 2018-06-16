@@ -135,10 +135,10 @@
         android:background="@drawable/buttonshape"
         android:text="Programar"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/butao_gravar"
-        app:layout_constraintHorizontal_bias="0.87"
-        app:layout_constraintStart_toStartOf="@+id/butao_gravar"
-        app:layout_constraintTop_toBottomOf="@+id/butao_gravar" />
+        app:layout_constraintEnd_toEndOf="@+id/butao_limpa"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/butao_limpa"
+        app:layout_constraintTop_toBottomOf="@+id/butao_limpa" />
 
     <Button
         android:id="@+id/butao_play"
@@ -208,16 +208,16 @@
         android:layout_alignBottom="@+id/butao_reset"
         android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_toEndOf="@+id/butao_reset"
         android:layout_toRightOf="@+id/butao_reset"
         android:background="@drawable/buttonshape"
-        android:text="Limpar Programa"
+        android:text="Limpar Gravação"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/programar"
-        app:layout_constraintHorizontal_bias="0.98"
-        app:layout_constraintStart_toStartOf="@+id/programar"
-        app:layout_constraintTop_toBottomOf="@+id/programar" />
+        app:layout_constraintEnd_toEndOf="@+id/butao_gravar"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/butao_gravar"
+        app:layout_constraintTop_toBottomOf="@+id/butao_gravar" />
 
     <SeekBar
         android:id="@+id/seekbar_garra"
@@ -247,7 +247,7 @@
         android:layout_marginTop="8dp"
         android:layout_toLeftOf="@+id/butao_play"
         android:layout_toStartOf="@+id/butao_play"
-        android:max="120"
+        android:max="60"
         android:progress="100"
         android:rotation="270"
         app:layout_constraintBottom_toTopOf="@+id/button_less_d"
@@ -404,7 +404,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/buttonshape"
         android:text="Reposicionar"
         android:textColor="#FFFFFF"
@@ -424,11 +424,11 @@
         android:background="@drawable/buttonshape"
         android:text="Posições Motores"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@+id/programar"
+        app:layout_constraintBottom_toBottomOf="@+id/butao_limpa"
         app:layout_constraintEnd_toEndOf="@+id/butao_reset"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="@+id/butao_play"
-        app:layout_constraintTop_toTopOf="@+id/programar"
+        app:layout_constraintTop_toTopOf="@+id/butao_limpa"
         app:layout_constraintVertical_bias="1.0" />
 
     <TextView
