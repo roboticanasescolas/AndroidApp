@@ -136,7 +136,7 @@
         android:text="Programar"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="@+id/butao_gravar"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.87"
         app:layout_constraintStart_toStartOf="@+id/butao_gravar"
         app:layout_constraintTop_toBottomOf="@+id/butao_gravar" />
 
@@ -181,7 +181,7 @@
 
     <Button
         android:id="@+id/butao_gravar"
-        android:layout_width="wrap_content"
+        android:layout_width="110dp"
         android:layout_height="40dp"
         android:layout_alignBaseline="@+id/butao_play"
         android:layout_alignBottom="@+id/butao_play"
