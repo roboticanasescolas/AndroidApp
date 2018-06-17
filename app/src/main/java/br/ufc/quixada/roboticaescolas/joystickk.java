@@ -316,7 +316,7 @@ public class joystickk extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 c_bar.setProgress(c_bar.getProgress()+1);
-                String comando = "!c" + (c_bar.getProgress()+60);
+                String comando = "!c" + (c_bar.getProgress()+100);
                 enviarComando(comando);
             }
         });
@@ -325,7 +325,7 @@ public class joystickk extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 c_bar.setProgress(c_bar.getProgress()-1);
-                String comando = "!c" + (c_bar.getProgress()+60);
+                String comando = "!c" + (c_bar.getProgress()+100);
                 enviarComando(comando);
             }
         });
@@ -358,21 +358,12 @@ public class joystickk extends AppCompatActivity {
                     String comando = "!b" + (base_bar.getProgress() + 10);
                     enviarComando(comando);
                 }else if(fCosta == false){
-                    int aux = 180 - (base_bar.getProgress());
                     base_bar.setProgress(base_bar.getProgress() - 1);
+                    int aux = 180 - (base_bar.getProgress());
                     aux--;
                     String comando = "!b" + (aux + 10);
                     enviarComando(comando);
                 }
-            }
-        });
-        less_garra.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                garra_bar.setProgress(garra_bar.getProgress()-1);
-                String comando = "!a" + (garra_bar.getProgress()+10);
-                enviarComando(comando);
             }
         });
 
@@ -385,8 +376,8 @@ public class joystickk extends AppCompatActivity {
                     String comando = "!b" + (base_bar.getProgress() + 10);
                     enviarComando(comando);
                 }else if(fCosta == false){
-                    int aux = 180 - (base_bar.getProgress());
                     base_bar.setProgress(base_bar.getProgress() + 1);
+                    int aux = 180 - (base_bar.getProgress());
                     aux++;
                     String comando = "!b" + (aux + 10);
                     enviarComando(comando);
@@ -402,6 +393,17 @@ public class joystickk extends AppCompatActivity {
                 enviarComando(comando);
             }
         });
+
+        less_garra.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                garra_bar.setProgress(garra_bar.getProgress()-1);
+                String comando = "!a" + (garra_bar.getProgress()+10);
+                enviarComando(comando);
+            }
+        });
+
 
 
         try{

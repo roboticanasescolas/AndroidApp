@@ -454,7 +454,7 @@
         android:id="@+id/cronometro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -462,33 +462,34 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/bCronometro"
         app:layout_constraintEnd_toEndOf="@+id/bCronometro"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="@+id/bCronometro" />
 
     <Button
         android:id="@+id/bCronometro"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/buttonshape"
-        android:text="Play"
 
+        android:text="Play"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button_more_base"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintHorizontal_bias="0.437"
         app:layout_constraintStart_toEndOf="@+id/frenteCosta"
-        app:layout_constraintTop_toBottomOf="@+id/frenteCosta" />
+        app:layout_constraintTop_toTopOf="@+id/frenteCosta" />
 
     <TextView
         android:id="@+id/tCronometro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -496,6 +497,7 @@
         android:text="Cronômetro"
         app:layout_constraintBottom_toTopOf="@+id/cronometro"
         app:layout_constraintEnd_toEndOf="@+id/bCronometro"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/bCronometro" />
 
 </android.support.constraint.ConstraintLayout>
