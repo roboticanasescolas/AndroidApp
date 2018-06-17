@@ -94,10 +94,19 @@ public class joystickk extends AppCompatActivity {
                     running = false;
                     cronometroPS.setText("STOP");
                 }else {
-
+                    String tempo = String.valueOf(cronometro.getText());
+                    Log.i("asd", "Tempo " + tempo);
                     cronometro.stop();
                     cronometroPS.setText("PLAY");
                     running = true;
+                    Intent it = new Intent(joystickk.this, TempoCronometro.class);
+
+                    Bundle parametros = new Bundle();
+
+                    parametros.putString("tempo", tempo);
+
+                    it.putExtras(parametros);
+                    startActivity(it);
                 }
             }
         });
