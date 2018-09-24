@@ -248,7 +248,7 @@
         android:layout_toLeftOf="@+id/butao_play"
         android:layout_toStartOf="@+id/butao_play"
         android:max="60"
-        android:progress="100"
+        android:progress="30"
         android:rotation="270"
         app:layout_constraintBottom_toTopOf="@+id/button_less_d"
         app:layout_constraintLeft_toLeftOf="@+id/button_more_garra"

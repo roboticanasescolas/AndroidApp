@@ -40,6 +40,11 @@ public class joystickk extends AppCompatActivity {
     private boolean fCosta = true;
     private boolean running = true;
     private Chronometer cronometro;
+
+    //Variáveis para controle de limites
+    //private int AlturaAbaixo1, AlturaAbaixo2, Altura, AvancoAcima1, AvancoAcima2, Avanco;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +72,15 @@ public class joystickk extends AppCompatActivity {
         label_c = (TextView) findViewById(R.id.label_c);
         label_d = (TextView) findViewById(R.id.label_d);
 
+        //Controle dos limites
+//        AlturaAbaixo1 = 30;
+//        AlturaAbaixo2 = 55;
+//        Altura = 0;
+//        AvancoAcima1 = 70;
+//        AvancoAcima2 = 50;
+//        Avanco = 100;
+
+
         //Botão frente costa
         frenteCosta = (Button) findViewById(R.id.frenteCosta);
         posicoes = (Button) findViewById(R.id.bPosicoes);
@@ -80,7 +94,7 @@ public class joystickk extends AppCompatActivity {
         label_garra.setText("" + (int) (garra_bar.getProgress()/0.57));
         label_base.setText("" + (int) (base_bar.getProgress()/1.8));
         label_c.setText("" + (int) (c_bar.getProgress()/0.7));
-        label_d.setText("" + (int) (d_bar.getProgress()/1.2));
+        label_d.setText("" + (int) (d_bar.getProgress()/0.6));
 
         //play.setVisibility(View.INVISIBLE);
         mmSocket = connection.getConection();
@@ -177,7 +191,22 @@ public class joystickk extends AppCompatActivity {
                 /*
                 Valor máximo da seekbar 70
                  */
+
+                //COntrolando os limites
+//                if((d_bar.getProgress() > 42)){
+//                    if((c_bar.getProgress() < 21345*())){
+//                        c_bar.setProgress(21);
+//                    }
+//                }
+//                if(auxD == 100){
+//
+//                }
+
+
+                /// FIm do contro dos limites
                 String comando = "!c" + (seekBar.getProgress() + 100);
+//                Log.i("asd", "C Bar: " + seekBar.getProgress());
+//                Log.i("asd", "D Bar: " + d_bar.getProgress());
                 enviarComando(comando);
 
             }
@@ -212,11 +241,11 @@ public class joystickk extends AppCompatActivity {
                 gravando = !gravando;
                 if (gravando){
                     gravar.setText("PARAR GRAVAÇÃO");
-                    Toast.makeText(joystickk.this, "Gravando!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(joystickk.this, "Gravando!", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     gravar.setText("GRAVAR");
-                    Toast.makeText(joystickk.this, "Fim da gravação!!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(joystickk.this, "Fim da gravação!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -251,7 +280,6 @@ public class joystickk extends AppCompatActivity {
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
 
-
 //                Intent it = new Intent(joystickk.this, posiServos.class);
 //
 //                Bundle parametros = new Bundle();
@@ -283,7 +311,7 @@ public class joystickk extends AppCompatActivity {
                 garra_bar.setProgress(57); //(Auto Lembrete) 57 Valor máximo da garra na seekbar (100 na label, mudado pelo enviar comando)
                 base_bar.setProgress(90);  //(Auto Lembrete) 90 Valor médio (máximo 180) da base na seekbar (50 na label, mudado pelo enviar comando)
                 c_bar.setProgress(70);     //(Auto Lembrete) 70 Valor máximo da Altura na seekbar (100 na label, mudado pelo enviar comando)
-                d_bar.setProgress(30);     //(Auto Lembrete) 30 Valor médio da Altura na seekbar (50 na label, mudado pelo enviar comando)
+                d_bar.setProgress(30);     //(Auto Lembrete) 30 Valor médio (máximo 60) da Altura na seekbar (50 na label, mudado pelo enviar comando)
                 try {
                     TimeUnit.MILLISECONDS.sleep(300);
                     enviarComando("!a67");
@@ -358,23 +386,6 @@ public class joystickk extends AppCompatActivity {
                 enviarComando(comando);
             }
         });
-        less_base.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                if(fCosta == true) {
-                    base_bar.setProgress(base_bar.getProgress() - 1);
-                    String comando = "!b" + (base_bar.getProgress() + 10);
-                    enviarComando(comando);
-                }else if(fCosta == false){
-                    base_bar.setProgress(base_bar.getProgress() - 1);
-                    int aux = 180 - (base_bar.getProgress());
-                    aux--;
-                    String comando = "!b" + (aux + 10);
-                    enviarComando(comando);
-                }
-            }
-        });
 
         more_base.setOnClickListener(new View.OnClickListener(){
 
@@ -393,6 +404,25 @@ public class joystickk extends AppCompatActivity {
                 }
             }
         });
+
+        less_base.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                if(fCosta == true) {
+                    base_bar.setProgress(base_bar.getProgress() - 1);
+                    String comando = "!b" + (base_bar.getProgress() + 10);
+                    enviarComando(comando);
+                }else if(fCosta == false){
+                    base_bar.setProgress(base_bar.getProgress() - 1);
+                    int aux = 180 - (base_bar.getProgress());
+                    aux--;
+                    String comando = "!b" + (aux + 10);
+                    enviarComando(comando);
+                }
+            }
+        });
+
         more_garra.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -439,43 +469,40 @@ public class joystickk extends AppCompatActivity {
     }
 
     public void enviarComando (String comando){
-//        try {
-//            mmOutputStream.write(comando.getBytes());
-            //Toast.makeText(joystickk.this, "enviado : " + comando, Toast.LENGTH_SHORT).show();
-            if (gravando){
-                comandosGravados.add(comando);
-                char chars [] = comando.toCharArray();
-                char servo = chars[1];
-                String aux = "";
-                String comandoTela = "";
-                for (int j = 2 ; j < chars.length; j++) {
-                    aux = aux + chars[j];
-                }
-                int posicaoAtual = Integer.parseInt(aux);
-                if (servo == 'a'){
-                    comandoTela = "Abre/fecha  ";
-                    posicaoAtual = (int) ((posicaoAtual-10)/0.57);
-                    Log.i("asd", "valor posicao: " + posicaoAtual);
-                    label_garra.setText(""+ posicaoAtual);
-                }
-                else if (servo == 'b'){
-                    comandoTela = "Girar  ";
-                    posicaoAtual = (int) ((posicaoAtual-10)/1.8);
-                    label_base.setText(""+ posicaoAtual);
-                }
-                else if (servo == 'c'){
-                    comandoTela = "Avanca/recua  ";
-                    posicaoAtual = (int) ((posicaoAtual-100)/0.7);
-                    label_c.setText(""+posicaoAtual);
-                }
-                else if (servo == 'd'){
-                    comandoTela = "Sobe/desce  ";
-                    posicaoAtual = (int) ((posicaoAtual-60)/0.6);
-                    label_d.setText(""+ posicaoAtual);
-                }
-                comandoTela += ""+posicaoAtual;
-                comandosTela.add(comandoTela);
+        if (gravando){
+            comandosGravados.add(comando);
+            char chars [] = comando.toCharArray();
+            char servo = chars[1];
+            String aux = "";
+            String comandoTela = "";
+            for (int j = 2 ; j < chars.length; j++) {
+                aux = aux + chars[j];
             }
+            int posicaoAtual = Integer.parseInt(aux);
+            if (servo == 'a'){
+                comandoTela = "Abre/fecha  ";
+                posicaoAtual = (int) ((posicaoAtual-10)/0.57);
+                Log.i("asd", "valor posicao: " + posicaoAtual);
+                label_garra.setText(""+ posicaoAtual);
+            }
+            else if (servo == 'b'){
+                comandoTela = "Girar  ";
+                posicaoAtual = (int) ((posicaoAtual-10)/1.8);
+                label_base.setText(""+ posicaoAtual);
+            }
+            else if (servo == 'c'){
+                comandoTela = "Avanca/recua  ";
+                posicaoAtual = (int) ((posicaoAtual-100)/0.7);
+                label_c.setText(""+posicaoAtual);
+            }
+            else if (servo == 'd'){
+                comandoTela = "Sobe/desce  ";
+                posicaoAtual = (int) ((posicaoAtual-60)/0.6);
+                label_d.setText(""+ posicaoAtual);
+            }
+            comandoTela += ""+posicaoAtual;
+            comandosTela.add(comandoTela);
+        }
 
         char chars [] = comando.toCharArray();
         char servo = chars[1];

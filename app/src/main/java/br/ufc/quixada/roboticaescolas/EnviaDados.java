@@ -12,6 +12,13 @@ import java.util.concurrent.TimeUnit;
  * Created by enoque_alves on 05/11/17.
  */
 
+/**
+ * A = 1 = GARRA
+ * B = 4 = BASE
+ * C = 2 = ALTURA
+ * D = 3 = AVANÇO
+ */
+
 public class EnviaDados {
     private static EnviaDados enviaDados;
     private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
@@ -43,11 +50,6 @@ public class EnviaDados {
     public void enviarComando (String comando){
         try {
             mmOutputStream.write(comando.getBytes());
-            //Toast.makeText(joystickk.this, "enviado : " + comando, Toast.LENGTH_SHORT).show();
-            /*if (gravando){
-                comandos.add(comando);
-            }
-            */
         }
         catch (IOException e){
             e.printStackTrace();
@@ -92,25 +94,26 @@ public class EnviaDados {
         }
     }
 
-    public void resetar(){
-        posicaoA = (57);
-        posicaoB = (87);
-        posicaoC = (100);
-        posicaoD = (40);
-        try {
-            TimeUnit.MILLISECONDS.sleep(500);
-            enviarComando("!a67");
-            TimeUnit.MILLISECONDS.sleep(500);
-            enviarComando("!b97");
-            TimeUnit.MILLISECONDS.sleep(500);
-            enviarComando("!c160");
-            TimeUnit.MILLISECONDS.sleep(500);
-            enviarComando("!d100");
-            TimeUnit.MILLISECONDS.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-    }
+    //Função feita pelo bolsista passado, sem utilidade
+//    public void resetar(){
+//        posicaoA = (57);
+//        posicaoB = (87);
+//        posicaoC = (100);
+//        posicaoD = (40);
+//        try {
+//            TimeUnit.MILLISECONDS.sleep(500);
+//            enviarComando("!a67");
+//            TimeUnit.MILLISECONDS.sleep(500);
+//            enviarComando("!b97");
+//            TimeUnit.MILLISECONDS.sleep(500);
+//            enviarComando("!c160");
+//            TimeUnit.MILLISECONDS.sleep(500);
+//            enviarComando("!d100");
+//            TimeUnit.MILLISECONDS.sleep(2000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public int getPosicaoA() {
         return posicaoA;
