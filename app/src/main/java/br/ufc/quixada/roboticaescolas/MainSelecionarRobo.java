@@ -42,7 +42,9 @@ public class MainSelecionarRobo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //chamar tela de conf Aranha
-                Toast.makeText(MainSelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
+                Intent it = new Intent(MainSelecionarRobo.this, joyAranha.class);
+                startActivity(it);
+                //Toast.makeText(MainSelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
             }
         });
     }

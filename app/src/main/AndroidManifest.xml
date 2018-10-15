@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/icone_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="br.ufc.quixada.roboticaescolas.MainActivity"></activity>
+        <activity android:name="br.ufc.quixada.roboticaescolas.MainActivity" />
         <activity android:name="br.ufc.quixada.roboticaescolas.ReceivingData" />
         <activity android:name="br.ufc.quixada.roboticaescolas.Dados" />
         <activity android:name="br.ufc.quixada.roboticaescolas.novo_comando" />
@@ -35,7 +35,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="br.ufc.quixada.roboticaescolas.TempoCronometro"></activity>
+        <activity android:name="br.ufc.quixada.roboticaescolas.TempoCronometro" />
+        <activity android:name="br.ufc.quixada.roboticaescolas.joyAranha"
+                  android:theme="@style/AppTheme.NoActionBar"
+                  android:screenOrientation="landscape"
+            ></activity>
     </application>
 
 </manifest>
