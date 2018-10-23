@@ -17,10 +17,10 @@ import java.util.concurrent.TimeUnit;
 
 public class joyAranha extends AppCompatActivity {
 
-//    private EnviaDados enviaDados = EnviaDados.getEnviaDados();
-//    private OutputStream mmOutputStream;
-//    private BluetoothSocket mmSocket;
-//    private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
+    private EnviaDados enviaDados = EnviaDados.getEnviaDados();
+    private OutputStream mmOutputStream;
+    private BluetoothSocket mmSocket;
+    private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
 
     private SeekBar sBa, sBb, sBc, sBd, sBe, sBf, sBg, sBh;
     private TextView tVa1, tVa2, tVb1, tVb2, tVc1, tVc2, tVd1, tVd2;
@@ -61,7 +61,14 @@ public class joyAranha extends AppCompatActivity {
         tVd2 = (TextView) findViewById(R.id.tVd2);
 
         reset = (Button) findViewById(R.id.bReset);
+        conectar = (ImageButton) findViewById(R.id.bConectar);
 
+//        conectar.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +154,7 @@ public class joyAranha extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String comando = "!c" + (seekBar.getProgress());
+                String comando = "!h" + (seekBar.getProgress());
                 enviarComando(comando);
             }
         });
@@ -164,7 +171,7 @@ public class joyAranha extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String comando = "!d" + (seekBar.getProgress());
+                String comando = "!g" + (seekBar.getProgress());
                 enviarComando(comando);
             }
         });
@@ -183,7 +190,7 @@ public class joyAranha extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String comando = "!e" + (seekBar.getProgress());
+                String comando = "!c" + (seekBar.getProgress());
                 enviarComando(comando);
             }
         });
@@ -201,7 +208,7 @@ public class joyAranha extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String comando = "!f" + (seekBar.getProgress());
+                String comando = "!d" + (seekBar.getProgress());
                 enviarComando(comando);
             }
         });
@@ -218,7 +225,7 @@ public class joyAranha extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String comando = "!g" + (seekBar.getProgress());
+                String comando = "!f" + (seekBar.getProgress());
                 enviarComando(comando);
             }
         });
@@ -235,7 +242,8 @@ public class joyAranha extends AppCompatActivity {
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-                String comando = "!h" + (seekBar.getProgress());
+                //int teste = 70 + (int) ;
+                String comando = "!e" + seekBar.getProgress();
                 enviarComando(comando);
             }
         });
@@ -258,24 +266,24 @@ public class joyAranha extends AppCompatActivity {
             tVa2.setText("A2: " + aux);
         }
         else if (servo == 'c'){
-            tVb2.setText("B2: " + aux);
-        }
-        else if (servo == 'd'){
-            tVb1.setText("B1: " + aux);
-        }
-        else if (servo == 'e'){
             tVc1.setText("C1: " + aux);
         }
-        else if (servo == 'f'){
+        else if (servo == 'd'){
             tVc2.setText("C2: " + aux);
         }
-        else if (servo == 'g'){
-            tVd2.setText("D2: " + aux);
-        }
-        else if (servo == 'h'){
+        else if (servo == 'e'){
             tVd1.setText("D1: " + aux);
         }
-//        enviaDados.enviarComando(comando);
+        else if (servo == 'f'){
+            tVd2.setText("D2: " + aux);
+        }
+        else if (servo == 'g'){
+            tVb1.setText("B1: " + aux);
+        }
+        else if (servo == 'h'){
+            tVb2.setText("B2: " + aux);
+        }
+        enviaDados.enviarComando(comando);
 
     }
 }

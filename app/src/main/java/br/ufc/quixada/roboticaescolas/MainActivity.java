@@ -35,12 +35,17 @@ public class MainActivity extends AppCompatActivity {
     private Set<BluetoothDevice> pairedDevices;
     private ListView listaDeDispositivos;
     private ArrayAdapter<String> adapter;
+    private String robo = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_dispositivos);
         //Log.i("asd", "qwe");
 
+        Bundle extra = getIntent().getExtras();
+        robo = extra.getString("key");
+        Log.i("asd", "Key: " + robo);
+        Toast.makeText(MainActivity.this, "-> " + robo, Toast.LENGTH_SHORT).show();
 
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         pairedDevices = mBluetoothAdapter.getBondedDevices();
@@ -75,9 +80,17 @@ public class MainActivity extends AppCompatActivity {
                                 conexao = ConexaoBlue.getInstance(device, true);
                                 if (conexao.isConnected()) {
                                     Toast.makeText(MainActivity.this, "Conectado ao " + device.getName(), Toast.LENGTH_SHORT).show();
-                                    Intent i = new Intent(MainActivity.this, joystickk.class);
-                                    startActivity(i);
-                                    //MainActivity.this.finish();
+                                    if (robo.equals("braco")){
+                                        Intent i = new Intent(MainActivity.this, joystickk.class);
+                                        startActivity(i);
+                                    }else if (robo.equals("aranha")){
+                                        Intent i = new Intent(MainActivity.this, joyAranha.class);
+                                        startActivity(i);
+                                    }
+//                                    else if (robo.equals("carro")){
+//                                        Intent i = new Intent(MainActivity.this, joyCarro.class);
+//                                        startActivity(i);
+//                                    }
                                 }
                                 else
                                     Toast.makeText(MainActivity.this, "Dispositivo fora de alcance", Toast.LENGTH_SHORT).show();
@@ -98,66 +111,7 @@ public class MainActivity extends AppCompatActivity {
         });
         BA = BluetoothAdapter.getDefaultAdapter();
         BtEnable();
-
-        /*while(true) {
-            it = new IntentFilter(); // Instancia o filtro declarado logo após o onCreate().
-            it.addAction(BluetoothDevice.ACTION_FOUND);
-            it.addCategory(Intent.CATEGORY_DEFAULT);
-            registerReceiver(mReceiver, it); // Registra um Receiver para o App.
-            break;
-        }*/
-
-
-
-
-    }
-
-/*
-    IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            // Quando a ação "discover" achar um dispositivo
-            if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                try{
-                    if(device.getName().trim().equals(nomeDispositivo)) {
-                        Log.i("asd", "ACHOU");
-                        conexao = ConexaoBlue.getInstance(device, true);
-                        if(conexao.isConnected()) {
-                            Toast.makeText(MainActivity.this, "Conectado ao " + device.getName(), Toast.LENGTH_SHORT).show();
-                            changeActivity(); // chama a ReceivingData
-                        }
-                    }
-
-                }catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
         }
-    };
-*/
-
-/*
-    // Create a BroadcastReceiver for ACTION_FOUND
-    private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
-        public void onReceive(Context context, Intent intent) {
-            String action = intent.getAction();
-            // When discovery finds a device
-            //if (BluetoothDevice.ACTION_FOUND.equals(action)) {
-                // Get the BluetoothDevice object from the Intent
-                BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                // Add the name and address to an array adapter to show in a ListView
-                textos.add(device.getName() + "\n" + device.getAddress()+"\n"+"Nao pareado!!");
-            //}
-        }
-    };
-    // Register the BroadcastReceiver
-    IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
-    //registerReceiver(mReceiver, filter); // Don't forget to unregister during onDestroy
-*/
-
-
 
     private void changeActivity() {
 

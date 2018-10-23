@@ -3,6 +3,7 @@ package br.ufc.quixada.roboticaescolas;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -24,8 +25,11 @@ public class TelaConfBraco extends AppCompatActivity {
         b_play.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Chamar Joystickk
+                //Chamar Conexao
+                Bundle parametros = new Bundle();
+                parametros.putString("key", "braco");
                 Intent it = new Intent(TelaConfBraco.this, MainActivity.class);
+                it.putExtras(parametros);
                 startActivity(it);
             }
         });

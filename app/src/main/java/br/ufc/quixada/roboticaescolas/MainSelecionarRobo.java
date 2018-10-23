@@ -3,6 +3,7 @@ package br.ufc.quixada.roboticaescolas;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -34,6 +35,9 @@ public class MainSelecionarRobo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //chamar tela de conf Carro
+//                Intent it = new Intent(MainSelecionarRobo.this, telaConfBraco.class);
+//                startActivity(it);
+//
                 Toast.makeText(MainSelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -42,9 +46,8 @@ public class MainSelecionarRobo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //chamar tela de conf Aranha
-                Intent it = new Intent(MainSelecionarRobo.this, joyAranha.class);
+                Intent it = new Intent(MainSelecionarRobo.this, telaConfAran.class);
                 startActivity(it);
-                //Toast.makeText(MainSelecionarRobo.this, "Ainda não implementado!", Toast.LENGTH_SHORT).show();
             }
         });
     }

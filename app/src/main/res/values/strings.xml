@@ -2,7 +2,6 @@
     <string name="app_name">Robo-QXD</string>
     <string name="title_activity_joystick">joystick</string>
     <string name="Resetar">Resetar</string>
-    <string name="Conectar">Conectar</string>
     <string name="A1">A1: </string>
     <string name="B1">B1: </string>
     <string name="C1">C1: </string>
@@ -13,5 +12,6 @@
     <string name="D2">D2: </string>
     <string name="play">PLAY </string>
     <string name="ConfServo">Configurar Servo</string>
+    <string name="Conectar">Conectar</string>
     <string name="title_activity_tela_de_programacao">TelaDeProgramacao</string>
 </resources>
