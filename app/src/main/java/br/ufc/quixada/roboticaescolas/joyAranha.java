@@ -26,12 +26,17 @@ public class joyAranha extends AppCompatActivity {
     private TextView tVa1, tVa2, tVb1, tVb2, tVc1, tVc2, tVd1, tVd2;
     private Button reset;
     private ImageButton conectar;
-    private int pIa, pIb, pIc, pId, pIe, pIf, pIg, pIh;
+    private int pIa, pIb, pIc, pId, pIe, pIf, pIg, pIh, maxH, maxV, minH, minV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_joy_aranha);
+
+        maxH = 170;
+        minH = 20;
+        maxV = 150;
+        minV = 10;
 
         pIa = 50;
         pIb = 50;
@@ -60,15 +65,14 @@ public class joyAranha extends AppCompatActivity {
         tVd1 = (TextView) findViewById(R.id.tVd1);
         tVd2 = (TextView) findViewById(R.id.tVd2);
 
+        tVa1.setText("A1: " + pIa);
+        tVa2.setText("A2: " + pIb);
+        tVc1.setText("C1: " + pIc);
+        tVc2.setText("C2: " + pId);
+
         reset = (Button) findViewById(R.id.bReset);
         conectar = (ImageButton) findViewById(R.id.bConectar);
 
-//        conectar.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +144,6 @@ public class joyAranha extends AppCompatActivity {
                 enviarComando(comando);
             }
         });
-
         sBc.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -175,8 +178,6 @@ public class joyAranha extends AppCompatActivity {
                 enviarComando(comando);
             }
         });
-
-
         sBe.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -194,7 +195,6 @@ public class joyAranha extends AppCompatActivity {
                 enviarComando(comando);
             }
         });
-
         sBf.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
@@ -254,36 +254,76 @@ public class joyAranha extends AppCompatActivity {
         char servo = chars[1];
         int auxBase = 0;
         String aux = "";
+        String comando2 = "";
         for (int j = 2 ; j < chars.length; j++) {
             aux = aux + chars[j];
         }
         int posicaoAtual = Integer.parseInt(aux);
         if (servo == 'a'){
             tVa1.setText("A1: " + aux);
-            //Log.i("asd", "A1 - " + comando);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.5);
+            int valor2 = (int) valor + 20;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 V: " + comando2);
         }
-        else if (servo == 'b'){//controlar visao
+        else if (servo == 'b'){
             tVa2.setText("A2: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.4);
+            int valor2 = (int) valor + 10;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 H: " + comando2);
         }
         else if (servo == 'c'){
             tVc1.setText("C1: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.5);
+            int valor2 = (int) valor + 20;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 V: " + comando2);
         }
         else if (servo == 'd'){
             tVc2.setText("C2: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.4);
+            int valor2 = (int) valor + 10;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 H: " + comando2);
         }
         else if (servo == 'e'){
             tVd1.setText("D1: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.5);
+            int valor2 = (int) valor + 20;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 V: " + comando2);
         }
         else if (servo == 'f'){
             tVd2.setText("D2: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.4);
+            int valor2 = (int) valor + 10;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 H: " + comando2);
         }
         else if (servo == 'g'){
             tVb1.setText("B1: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.5);
+            int valor2 = (int) valor + 20;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 V: " + comando2);
         }
         else if (servo == 'h'){
             tVb2.setText("B2: " + aux);
+            int aux2 = Integer.parseInt(aux);
+            float valor = (float) (aux2 * 1.4);
+            int valor2 = (int) valor + 10;
+            comando2 = ("!" + servo + valor2);
+            Log.i("asd", "Comando 2 H: " + comando2);
         }
-        enviaDados.enviarComando(comando);
+        enviaDados.enviarComando(comando2);
 
     }
 }
