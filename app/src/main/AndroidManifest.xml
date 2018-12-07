@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.enoque_alves.roboticaescolas">
+    package="br.ufc.quixada.roboticaescolas">
     &lt;uses-permission android:name="android.permission.BLUETOOTH" /> &lt; uses-permission
     android:name="android.permission.BLUETOOTH_ADMIN" / > &lt;uses-permission
     android:name="android.permission.ACCESS_COARSE_LOCATION" /> &lt;uses-permission
@@ -26,8 +26,7 @@
             android:name="br.ufc.quixada.roboticaescolas.TelaDeProgramacao"
             android:label="@string/title_activity_tela_de_programacao"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="br.ufc.quixada.roboticaescolas.posiServos" />
-        <activity android:name="br.ufc.quixada.roboticaescolas.TelaConfBraco" />
+        <activity android:name="br.ufc.quixada.roboticaescolas.TelaConexaoBraco" />
         <activity android:name="br.ufc.quixada.roboticaescolas.MainSelecionarRobo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +39,13 @@
             android:name="br.ufc.quixada.roboticaescolas.joyAranha"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="br.ufc.quixada.roboticaescolas.telaConfAran"></activity>
+        <activity android:name="br.ufc.quixada.roboticaescolas.telaConexaoAran" />
+        <activity android:name="br.ufc.quixada.roboticaescolas.configuracaoBraco" />
+        <activity
+            android:name="br.ufc.quixada.roboticaescolas.joyEasyAranha"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="br.ufc.quixada.roboticaescolas.confguracaoAranha"></activity>
     </application>
 
 </manifest>

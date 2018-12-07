@@ -3,12 +3,11 @@ package br.ufc.quixada.roboticaescolas;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import com.example.enoque_alves.roboticaescolas.R;
+//import com.example.enoque_alves.roboticaescolas.R;
 
 public class MainSelecionarRobo extends AppCompatActivity {
     private ImageButton b_braco, b_carro, b_aranha;
@@ -25,8 +24,8 @@ public class MainSelecionarRobo extends AppCompatActivity {
         b_braco.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //chamar tela de conf braco
-                Intent it = new Intent(MainSelecionarRobo.this, TelaConfBraco.class);
+                //chamar tela de conexão braco
+                Intent it = new Intent(MainSelecionarRobo.this, TelaConexaoBraco.class);
                 startActivity(it);
             }
         });
@@ -34,7 +33,7 @@ public class MainSelecionarRobo extends AppCompatActivity {
         b_carro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //chamar tela de conf Carro
+                //chamar tela de conexão Carro
 //                Intent it = new Intent(MainSelecionarRobo.this, telaConfBraco.class);
 //                startActivity(it);
 //
@@ -45,8 +44,8 @@ public class MainSelecionarRobo extends AppCompatActivity {
         b_aranha.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //chamar tela de conf Aranha
-                Intent it = new Intent(MainSelecionarRobo.this, telaConfAran.class);
+                //chamar tela de conecxão Aranha
+                Intent it = new Intent(MainSelecionarRobo.this, telaConexaoAran.class);
                 startActivity(it);
             }
         });

@@ -16,7 +16,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.enoque_alves.roboticaescolas.R;
+//import com.example.enoque_alves.roboticaescolas.R;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -32,7 +32,7 @@ public class joystickk extends AppCompatActivity {
     private ArrayList<String> comandos = new ArrayList<String>();
     private ArrayList<String> comandosTela = new ArrayList<String>();
     private Button gravar, limpar, play, reset, programar, frenteCosta, posicoes, cronometroPS;
-    private ImageButton more_base, more_garra, less_base, less_garra, more_c, more_d, less_c, less_d;
+    private ImageButton more_base, more_garra, less_base, less_garra, more_c, more_d, less_c, less_d, confServos;
     private ConexaoBlue connection = ConexaoBlue.getInstance(null, false);
     private EnviaDados enviaDados = EnviaDados.getEnviaDados();
     private TextView label_garra, label_base, label_c, label_d, setVisao;
@@ -40,10 +40,7 @@ public class joystickk extends AppCompatActivity {
     private boolean fCosta = true;
     private boolean running = true;
     private Chronometer cronometro;
-
-    //Variáveis para controle de limites
-    //private int AlturaAbaixo1, AlturaAbaixo2, Altura, AvancoAcima1, AvancoAcima2, Avanco;
-
+    private int pIGarra, pIAltura, pIAvanco, pIBase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,14 +68,13 @@ public class joystickk extends AppCompatActivity {
         label_garra = (TextView) findViewById(R.id.label_garra);
         label_c = (TextView) findViewById(R.id.label_c);
         label_d = (TextView) findViewById(R.id.label_d);
+        confServos = (ImageButton) findViewById(R.id.bConfServos);
 
-        //Controle dos limites
-//        AlturaAbaixo1 = 30;
-//        AlturaAbaixo2 = 55;
-//        Altura = 0;
-//        AvancoAcima1 = 70;
-//        AvancoAcima2 = 50;
-//        Avanco = 100;
+        //Posição Inicial
+        pIGarra = 57;
+        pIAltura = 70;
+        pIAvanco = 30;
+        pIBase = 90;
 
 
         //Botão frente costa
@@ -122,6 +118,18 @@ public class joystickk extends AppCompatActivity {
                     it.putExtras(parametros);
                     startActivity(it);
                 }
+            }
+        });
+
+        confServos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent2 = new Intent(joystickk.this, configuracaoBraco.class);
+                intent2.putExtra("garra", pIGarra);
+                intent2.putExtra("altura", pIAltura);
+                intent2.putExtra("avanco", pIAvanco);
+                intent2.putExtra("base", pIBase);
+                startActivityForResult(intent2, 50);
             }
         });
 
@@ -191,22 +199,7 @@ public class joystickk extends AppCompatActivity {
                 /*
                 Valor máximo da seekbar 70
                  */
-
-                //COntrolando os limites
-//                if((d_bar.getProgress() > 42)){
-//                    if((c_bar.getProgress() < 21345*())){
-//                        c_bar.setProgress(21);
-//                    }
-//                }
-//                if(auxD == 100){
-//
-//                }
-
-
-                /// FIm do contro dos limites
                 String comando = "!c" + (seekBar.getProgress() + 100);
-//                Log.i("asd", "C Bar: " + seekBar.getProgress());
-//                Log.i("asd", "D Bar: " + d_bar.getProgress());
                 enviarComando(comando);
 
             }
@@ -279,20 +272,7 @@ public class joystickk extends AppCompatActivity {
                         "\nBase (Motor 4): " + baseT, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.CENTER, 0, 0);
                 toast.show();
-
-//                Intent it = new Intent(joystickk.this, posiServos.class);
-//
-//                Bundle parametros = new Bundle();
-//
-//                parametros.putString("teste", "teste");
-//                parametros.putString("cGarra", garraT);
-//                parametros.putString("cBase", baseT);
-//                parametros.putString("cAltura", alturaT);
-//                parametros.putString("cAvanco", avancoT);
-//
-//                it.putExtras(parametros);
-//                startActivity(it);
-            }
+                }
         });
 
         limpar.setOnClickListener(new View.OnClickListener(){
@@ -308,19 +288,28 @@ public class joystickk extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                garra_bar.setProgress(57); //(Auto Lembrete) 57 Valor máximo da garra na seekbar (100 na label, mudado pelo enviar comando)
-                base_bar.setProgress(90);  //(Auto Lembrete) 90 Valor médio (máximo 180) da base na seekbar (50 na label, mudado pelo enviar comando)
-                c_bar.setProgress(70);     //(Auto Lembrete) 70 Valor máximo da Altura na seekbar (100 na label, mudado pelo enviar comando)
-                d_bar.setProgress(30);     //(Auto Lembrete) 30 Valor médio (máximo 60) da Altura na seekbar (50 na label, mudado pelo enviar comando)
+                garra_bar.setProgress(pIGarra); //(Auto Lembrete) 57 Valor máximo da garra na seekbar (100 na label, mudado pelo enviar comando)
+                Log.i("ASD", "Novo Valor 1: " + pIGarra);
+                base_bar.setProgress(pIBase);  //(Auto Lembrete) 90 Valor médio (máximo 180) da base na seekbar (50 na label, mudado pelo enviar comando)
+                Log.i("ASD", "Novo Valor 2: " + pIBase);
+                c_bar.setProgress(pIAltura);     //(Auto Lembrete) 70 Valor máximo da Altura na seekbar (100 na label, mudado pelo enviar comando)
+                Log.i("ASD", "Novo Valor 3: " + pIAltura);
+                d_bar.setProgress(pIAvanco);     //(Auto Lembrete) 30 Valor médio (máximo 60) da Altura na seekbar (50 na label, mudado pelo enviar comando)
+                Log.i("ASD", "Novo Valor 4: " + pIAvanco);
                 try {
                     TimeUnit.MILLISECONDS.sleep(300);
-                    enviarComando("!a67");
+                    String comando = "!a" + (pIGarra+10);
+                    enviarComando(comando);
                     TimeUnit.MILLISECONDS.sleep(300);
-                    enviarComando("!b100");
+                    comando = "!b" + (pIBase+10);
+                    enviarComando(comando);
+
                     TimeUnit.MILLISECONDS.sleep(300);
-                    enviarComando("!c170");
+                    comando = "!c" + (pIAltura+100);
+                    enviarComando(comando);
                     TimeUnit.MILLISECONDS.sleep(300);
-                    enviarComando("!d90");
+                    comando = "!d" + (pIAvanco+60);
+                    enviarComando(comando);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -465,6 +454,13 @@ public class joystickk extends AppCompatActivity {
             comandosTela = data.getStringArrayListExtra("comandosTela");
             delay = data.getIntExtra("delay", 1000);
             //Toast.makeText(ReceivingData.this,"Mensagem Recebida da SegundaActivity:\n" + resposta, Toast.LENGTH_LONG).show();
+        }
+
+        if(resultCode == joystickk.this.RESULT_OK && requestCode == 50){
+            pIGarra = data.getIntExtra("garra", 0);
+            pIAltura = data.getIntExtra("altura", 0);
+            pIAvanco = data.getIntExtra("avanco", 0);
+            pIBase = data.getIntExtra("base", 0);
         }
     }
 

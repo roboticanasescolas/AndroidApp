@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.example.enoque_alves.roboticaescolas.R;
+//import com.example.enoque_alves.roboticaescolas.R;
 
 public class novo_comando extends AppCompatActivity {
     Button enviar;

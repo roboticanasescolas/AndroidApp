@@ -17,7 +17,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.view.View;
 
-import com.example.enoque_alves.roboticaescolas.R;
+//import com.example.enoque_alves.roboticaescolas.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         Bundle extra = getIntent().getExtras();
         robo = extra.getString("key");
         Log.i("asd", "Key: " + robo);
-        Toast.makeText(MainActivity.this, "-> " + robo, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(MainActivity.this, "-> " + robo, Toast.LENGTH_SHORT).show();
 
         BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         pairedDevices = mBluetoothAdapter.getBondedDevices();

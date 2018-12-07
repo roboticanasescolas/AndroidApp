@@ -349,16 +349,18 @@
         android:id="@+id/label_d"
         android:layout_width="30dp"
         android:layout_height="19dp"
-        android:layout_marginBottom="80dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="2dp"
+        android:layout_marginBottom="80dp"
         android:rotation="90"
         android:text="D"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.507" />
 
     <TextView
         android:id="@+id/textView5"
@@ -399,29 +401,26 @@
 
     <Button
         android:id="@+id/frenteCosta"
-        android:layout_width="110dp"
+        android:layout_width="87dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/buttonshape"
-        android:text="Reposicionar"
+        android:text="Visão"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/bPosicoes"
-        app:layout_constraintStart_toStartOf="@+id/bPosicoes"
+        app:layout_constraintEnd_toEndOf="@+id/butao_play"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/butao_play"
         app:layout_constraintTop_toBottomOf="@+id/bPosicoes" />
 
     <Button
         android:id="@+id/bPosicoes"
-        android:layout_width="110dp"
+        android:layout_width="129dp"
         android:layout_height="40dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:background="@drawable/buttonshape"
         android:text="Posições Motores"
         android:textColor="#FFFFFF"
@@ -470,21 +469,22 @@
         android:id="@+id/bCronometro"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/buttonshape"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
 
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttonshape"
         android:text="Play"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/button_more_base"
         app:layout_constraintEnd_toStartOf="@+id/textView5"
-        app:layout_constraintHorizontal_bias="0.437"
-        app:layout_constraintStart_toEndOf="@+id/frenteCosta"
-        app:layout_constraintTop_toTopOf="@+id/frenteCosta" />
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toEndOf="@+id/bConfServos"
+        app:layout_constraintTop_toTopOf="@+id/frenteCosta"
+        app:layout_constraintVertical_bias="0.086" />
 
     <TextView
         android:id="@+id/tCronometro"
@@ -500,5 +500,19 @@
         app:layout_constraintEnd_toEndOf="@+id/bCronometro"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/bCronometro" />
+
+    <ImageButton
+        android:id="@+id/bConfServos"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/buttonshape"
+        android:src="@drawable/ic_settings"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/frenteCosta"
+        app:layout_constraintEnd_toEndOf="@+id/butao_reset"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/butao_reset"
+        app:layout_constraintTop_toTopOf="@+id/frenteCosta"
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>

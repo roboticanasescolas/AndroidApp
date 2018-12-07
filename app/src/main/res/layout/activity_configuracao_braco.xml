@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufc.quixada.roboticaescolas.configuracaoBraco">
+
+    <TextView
+        android:id="@+id/tVConfBraco"
+        android:layout_width="320dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="@string/tVConfBraco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tVPIGarra"
+        android:layout_width="78dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Garra (1):"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tVConfBraco" />
+
+    <TextView
+        android:id="@+id/tVPIAltura"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="32dp"
+        android:text="Altura (2):"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tVPIGarra"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tVPIGarra"
+        app:layout_constraintTop_toBottomOf="@+id/tVPIGarra" />
+
+    <TextView
+        android:id="@+id/tVPIAvanco"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="32dp"
+        android:text="Avanço (3):"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tVPIAltura"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tVPIAltura"
+        app:layout_constraintTop_toBottomOf="@+id/tVPIAltura" />
+
+    <TextView
+        android:id="@+id/tVPIBase"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginTop="8dp"
+        android:text="Base (4):"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextBase"
+        app:layout_constraintEnd_toEndOf="@+id/tVPIAvanco"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/tVPIAvanco"
+        app:layout_constraintTop_toBottomOf="@+id/tVPIAvanco"
+        app:layout_constraintVertical_bias="0.69" />
+
+    <Button
+        android:id="@+id/bPIConf"
+        android:layout_width="129dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="91dp"
+        android:background="@drawable/buttonshape"
+        android:text="Confirmar"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextGarra"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Valor (0 a 100)"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tVPIGarra"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAltura"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextAltura"
+        app:layout_constraintTop_toTopOf="@+id/tVPIGarra"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <EditText
+        android:id="@+id/editTextAltura"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Valor (0 a 100)"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tVPIAltura"
+        app:layout_constraintEnd_toEndOf="@+id/editTextAvanco"
+        app:layout_constraintStart_toStartOf="@+id/editTextAvanco"
+        app:layout_constraintTop_toTopOf="@+id/tVPIAltura" />
+
+    <EditText
+        android:id="@+id/editTextAvanco"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Valor (0 a 100)"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/tVPIAvanco"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBase"
+        app:layout_constraintStart_toStartOf="@+id/editTextBase"
+        app:layout_constraintTop_toTopOf="@+id/tVPIAvanco" />
+
+    <EditText
+        android:id="@+id/editTextBase"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:ems="10"
+        android:hint="Valor (0 a 100)"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAvanco" />
+
+</android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.enoque_alves.roboticaescolas.R;
+//import com.example.enoque_alves.roboticaescolas.R;
 
 public class dialogDelay extends AppCompatDialogFragment {
     private EditText delay;

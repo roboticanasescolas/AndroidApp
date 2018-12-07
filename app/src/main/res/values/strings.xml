@@ -13,5 +13,9 @@
     <string name="play">PLAY </string>
     <string name="ConfServo">Configurar Servo</string>
     <string name="Conectar">Conectar</string>
+    <string name="ConectarEasy">Conectar modo EASY</string>
+    <string name="ConectarHard">Conectar modo HARD</string>
     <string name="title_activity_tela_de_programacao">TelaDeProgramacao</string>
+    <string name="tVConfBraco">Configuração inicial do braço</string>
+
 </resources>

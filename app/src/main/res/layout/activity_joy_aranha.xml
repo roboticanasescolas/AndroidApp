@@ -21,15 +21,15 @@
         android:background="@drawable/buttonshape"
         android:text="@string/Resetar"
         android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="@+id/bConectar"
+        app:layout_constraintEnd_toEndOf="@+id/bConfAra"
         app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="@+id/bConectar"
+        app:layout_constraintStart_toStartOf="@+id/bConfAra"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/bConectar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/bConfAra"
+        android:layout_width="39dp"
+        android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -37,7 +37,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="100dp"
         android:background="@drawable/buttonshape"
-        android:src="@android:drawable/stat_sys_data_bluetooth"
+        android:src="@drawable/ic_settings"
         android:text="@string/Conectar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,7 @@
         android:rotation="225"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bConectar" />
+        app:layout_constraintTop_toTopOf="@+id/bConfAra" />
 
     <SeekBar
         android:id="@+id/seekBar_d1"
@@ -103,7 +103,7 @@
         android:rotation="315"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bConectar" />
+        app:layout_constraintTop_toTopOf="@+id/bConfAra" />
 
     <TextView
         android:id="@+id/tVa1"
@@ -161,7 +161,7 @@
         android:max="100"
         android:rotation="270"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bConectar"
+        app:layout_constraintEnd_toStartOf="@+id/bConfAra"
         app:layout_constraintTop_toTopOf="@+id/seekBar_c1"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -192,7 +192,7 @@
         android:rotation="270"
         android:background="@drawable/buttonshape"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bConectar"
+        app:layout_constraintStart_toEndOf="@+id/bConfAra"
         app:layout_constraintTop_toTopOf="@+id/seekBar_d1"
         app:layout_constraintVertical_bias="0.0" />
 
